@@ -43,4 +43,19 @@ public class Player_Movement : MonoBehaviour
             transform.position = pos;
         }
 
+
+        private void OnTriggerEnter2D(Collider2D collision) {
+        if (collision.gameObject.tag == "enemies"){
+               Time.timeScale = 0 ;
+            //    gameOverPanel.SetActive(true);
+        }
+        
+        // if (collision.gameObject.tag == "Coin"){
+        //        CoinSound.Play();
+        //        score_Value.score += 10;
+        //        Destroy(collision.gameObject);
+        // }
+        
+    }
+
 }

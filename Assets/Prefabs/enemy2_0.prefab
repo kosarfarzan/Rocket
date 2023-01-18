@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 8427474569149833462}
   - component: {fileID: 5480162067452039251}
   - component: {fileID: 4100055890171303851}
+  - component: {fileID: 175167498013527677}
   m_Layer: 0
   m_Name: enemy2_0
-  m_TagString: Untagged
+  m_TagString: enemies
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -99,3 +100,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   transform: {fileID: 8427474569149833462}
   speed: 4
+--- !u!61 &175167498013527677
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3780460811709149383}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2.31, y: 2.44}
+    newSize: {x: 2.31, y: 2.44}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.31, y: 2.44}
+  m_EdgeRadius: 0
