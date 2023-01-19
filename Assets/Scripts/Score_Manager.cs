@@ -2,22 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Score_Manager : MonoBehaviour
 {
     public int score = 0;
-    public Text scoreText;
     public int highScore;
-    public static int lastScore = 0;
+    // public static int lastScore = 0;
+    public Text scoreText;
     public Text HighScoreText;
-    public Text lastScoreText;
+    // public Text lastScoreText;
 
 
     void Start()
     {
         StartCoroutine(Score());
-        highScore = 0;
-        Debug.Log("high score stored:" + PlayerPrefs.GetInt("high_score", highScore));
+        highScore = PlayerPrefs.GetInt("high_score" , 0);;
+        HighScoreText.text =  highScore.ToString();
+        // lastScoreText.text =  lastScore.ToString();
 
     }
 
@@ -27,7 +29,6 @@ public class Score_Manager : MonoBehaviour
        scoreText.text = score.ToString();
        if (score > highScore) {
             highScore = score;
-            Debug.Log(highScore);
             PlayerPrefs.SetInt("high_score", highScore);
                 }
         
@@ -37,6 +38,14 @@ public class Score_Manager : MonoBehaviour
         while(true){
         yield return new WaitForSeconds(2);
         score = score + 1;
+        // lastScore = score;
          }
     }
+
+    // IEnumerator Reload() {
+    //     yield return new WaitForSeconds(10);
+    //     SceneManager.LoadScene("Main");
+
+    //     }
+    
 }
