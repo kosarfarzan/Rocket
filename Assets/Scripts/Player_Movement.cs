@@ -8,6 +8,7 @@ public class Player_Movement : MonoBehaviour
     public float speed = 1.5f;
     public float rotationSpeed = 5f;
     public Score_Manager score_Value;
+    public AudioSource CoinSound;
 
     
     void Start()
@@ -49,10 +50,11 @@ public class Player_Movement : MonoBehaviour
         if (collision.gameObject.tag == "enemies"){
                Time.timeScale = 0 ;
             //    gameOverPanel.SetActive(true);
-            }
+        }
+
         
         if (collision.gameObject.tag == "coin"){
-            //    CoinSound.Play();
+               CoinSound.Play();
                score_Value.score += 10;
                Destroy(collision.gameObject);
         }

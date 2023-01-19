@@ -5,7 +5,7 @@ using UnityEngine;
 public class Scrolling : MonoBehaviour
 {
     public Renderer meshRenderer;
-    float speed = 0.2f;
+    float speed = 0.3f;
     // Start is called before the first frame update
     void Start()
     {
