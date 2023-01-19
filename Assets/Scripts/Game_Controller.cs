@@ -27,4 +27,9 @@ public class Game_Controller : MonoBehaviour
         highScoreText.text = highScore.ToString();
         scoreText.text = score.ToString();
     }
+
+
+    public void Restart() {
+        SceneManager.LoadScene("Main");
+    }
 }
