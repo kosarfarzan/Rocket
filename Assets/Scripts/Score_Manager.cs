@@ -8,10 +8,8 @@ public class Score_Manager : MonoBehaviour
 {
     public int score = 0;
     public int highScore;
-    // public static int lastScore = 0;
     public Text scoreText;
     public Text HighScoreText;
-    // public Text lastScoreText;
 
 
     void Start()
@@ -19,8 +17,6 @@ public class Score_Manager : MonoBehaviour
         StartCoroutine(Score());
         highScore = PlayerPrefs.GetInt("high_score" , 0);;
         HighScoreText.text =  highScore.ToString();
-        // lastScoreText.text =  lastScore.ToString();
-
     }
 
     
@@ -38,14 +34,8 @@ public class Score_Manager : MonoBehaviour
         while(true){
         yield return new WaitForSeconds(2);
         score = score + 1;
-        // lastScore = score;
          }
     }
 
-    // IEnumerator Reload() {
-    //     yield return new WaitForSeconds(10);
-    //     SceneManager.LoadScene("Main");
-
-    //     }
     
 }

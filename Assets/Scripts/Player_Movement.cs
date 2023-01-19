@@ -9,11 +9,13 @@ public class Player_Movement : MonoBehaviour
     public float rotationSpeed = 5f;
     public Score_Manager score_Value;
     public AudioSource CoinSound;
+    public AudioSource GaameOverSound;
+    public GameObject gameOverPanel;
 
     
     void Start()
     {
-        
+        gameOverPanel.SetActive(false);
     }
 
 
@@ -49,7 +51,8 @@ public class Player_Movement : MonoBehaviour
         private void OnTriggerEnter2D(Collider2D collision) {
         if (collision.gameObject.tag == "enemies"){
                Time.timeScale = 0 ;
-            //    gameOverPanel.SetActive(true);
+               gameOverPanel.SetActive(true);
+               GaameOverSound.Play();
         }
 
         
