@@ -326,6 +326,7 @@ GameObject:
   m_Component:
   - component: {fileID: 474199298}
   - component: {fileID: 474199297}
+  - component: {fileID: 474199299}
   m_Layer: 0
   m_Name: Spawner
   m_TagString: Untagged
@@ -365,6 +366,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &474199299
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 474199296}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2dce6aa326c2c3b43b4353895c2b2e5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coinPrefabs: {fileID: 6358201497039936060, guid: fed10ea65db79024aa4f6656d76d76d7, type: 3}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -569,6 +583,7 @@ MonoBehaviour:
   transform: {fileID: 1202603560}
   speed: 1.5
   rotationSpeed: 5
+  score_Value: {fileID: 1202603563}
 --- !u!212 &1202603559
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -697,6 +712,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   score: 0
   scoreText: {fileID: 1392341528}
+  highScore: 0
 --- !u!1 &1328319405
 GameObject:
   m_ObjectHideFlags: 0
@@ -916,7 +932,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_UiScaleMode: 1
-  m_ReferencePixelsPerUnit: 100
+  m_ReferencePixelsPerUnit: 200
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
   m_ScreenMatchMode: 0

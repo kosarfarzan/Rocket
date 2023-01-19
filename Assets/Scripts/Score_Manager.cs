@@ -7,11 +7,13 @@ public class Score_Manager : MonoBehaviour
 {
     public int score = 0;
     public Text scoreText;
+    public int highScore;
 
 
     void Start()
     {
         StartCoroutine(Score());
+        highScore = 0;
 
     }
 
@@ -19,6 +21,11 @@ public class Score_Manager : MonoBehaviour
     void Update()
     {
        scoreText.text = score.ToString();
+       if (score > highScore) {
+            highScore = score;
+            Debug.Log(highScore);
+            // PlayerPrefs.SetInt("high_score", highScore);
+        }
         
     }
 
@@ -26,7 +33,6 @@ public class Score_Manager : MonoBehaviour
         while(true){
         yield return new WaitForSeconds(2);
         score = score + 1;
-        Debug.Log("Score:" + score);
          }
     }
 }
