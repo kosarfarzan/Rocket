@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class Game_Controller : MonoBehaviour
 {
     public Text highScoreText;
+    public Text StartHighScoreText;
     public Text scoreText;  
     public int score;
     public int highScore;
@@ -28,6 +29,7 @@ public class Game_Controller : MonoBehaviour
         highScore = PlayerPrefs.GetInt("high_score");
         score = score_manager.score;
         highScoreText.text = highScore.ToString();
+        StartHighScoreText.text = highScore.ToString();
         scoreText.text = score.ToString();
     }
 
@@ -49,6 +51,8 @@ public class Game_Controller : MonoBehaviour
         gamePausePanel.SetActive(false);
         gamePauseButton.SetActive(true);
     }
+
+    
 
 
 

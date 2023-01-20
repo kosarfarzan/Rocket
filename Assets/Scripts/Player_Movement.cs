@@ -9,14 +9,17 @@ public class Player_Movement : MonoBehaviour
     public float rotationSpeed = 5f;
     public Score_Manager score_Value;
     public AudioSource CoinSound;
-    public AudioSource GaameOverSound;
+    public AudioSource GameOverSound;
     public GameObject gameOverPanel;
+    public GameObject startPanel;
+    
 
     
     void Start()
     {
         gameOverPanel.SetActive(false);
-        Time.timeScale = 1 ;
+        startPanel.SetActive(true);
+        Time.timeScale = 0 ;
     }
 
 
@@ -53,7 +56,7 @@ public class Player_Movement : MonoBehaviour
         if (collision.gameObject.tag == "enemies"){
                Time.timeScale = 0 ;
                gameOverPanel.SetActive(true);
-               GaameOverSound.Play();
+               GameOverSound.Play();
         }
 
         
@@ -64,5 +67,14 @@ public class Player_Movement : MonoBehaviour
         }
         
     }
+
+
+    public void GameStart(){
+            startPanel.SetActive(false);
+            Time.timeScale = 1;
+            
+         }
+
+         
 
 }
