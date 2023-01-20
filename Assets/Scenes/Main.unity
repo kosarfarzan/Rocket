@@ -1709,6 +1709,8 @@ MonoBehaviour:
   GameOverSound: {fileID: 0}
   gameOverPanel: {fileID: 1419740942}
   startPanel: {fileID: 71323164}
+  BulletPrefab: {fileID: 7156706733537859606, guid: 4cdca0ba2e39b2c47b05474d7cd76ce5, type: 3}
+  BulletSpeed: 5
 --- !u!212 &1202603559
 SpriteRenderer:
   m_ObjectHideFlags: 0

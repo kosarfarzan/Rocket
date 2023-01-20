@@ -12,6 +12,9 @@ public class Player_Movement : MonoBehaviour
     public AudioSource GameOverSound;
     public GameObject gameOverPanel;
     public GameObject startPanel;
+    public GameObject BulletPrefab;
+    public float BulletSpeed;
+    bool fired = false;
     
 
     
@@ -27,6 +30,21 @@ public class Player_Movement : MonoBehaviour
     {
         Movment();
         Clamp();
+
+        if(Input.GetAxis("Fire1")==1){
+            if(fired == false){
+                fired = true;
+                GameObject BulletInstance = Instantiate(BulletPrefab);
+                BulletInstance.transform.SetParent(transform.parent);
+                BulletInstance.transform.position = transform.position;
+                BulletInstance.GetComponent<Rigidbody2D>().velocity = new Vector3(0,BulletSpeed,transform.position.z);
+                Destroy(BulletInstance.gameObject,5);
+            }
+        }
+        else{
+            fired = false;
+        }
+        
     }
 
 
@@ -69,11 +87,18 @@ public class Player_Movement : MonoBehaviour
     }
 
 
-    public void GameStart(){
+        public void GameStart(){
             startPanel.SetActive(false);
             Time.timeScale = 1;
             
          }
+
+
+         
+
+
+
+
 
          
 
