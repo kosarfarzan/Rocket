@@ -6,7 +6,7 @@ public class Enemy_Movement : MonoBehaviour
 {
     public Transform transform;
     public float speed = 4f;    
-    
+    public Score_Manager score_Value;
     
     void Start()
     {
@@ -20,6 +20,16 @@ public class Enemy_Movement : MonoBehaviour
        
         if (transform.position.y <= -10) {
             Destroy(gameObject);
+        }
+    }
+
+
+    private void OnTriggerEnter2D(Collider2D collision) {
+        if (collision.gameObject.tag == "PlayerBullet"){
+               Destroy(gameObject);
+               
+               
+
         }
     }
 }
